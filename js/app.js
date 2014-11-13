@@ -1,2 +1,6 @@
-jQuery("p").remove();
-prompt("Hello");
+var main = function ()
+{
+	alert("Your script is working.");	
+};
+
+main();
