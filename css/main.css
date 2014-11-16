@@ -1,4 +1,78 @@
+/*
+ *	Guy Moore
+ */
+
+/************
+	GENERAL
+ ************/
+
+html
+{
+	font-size: 16px;
+}
+
+
+
+/************
+	HEADER
+ ************/
+
+header
+{
+	border: solid .075em black;
+
+	text-align: center;
+	
+	padding: .25em 0;
+}
+
+nav li
+{
+	display: inline-block;
+	margin: 0 .5em;
+}	
+
+
+
+/************
+	FOOTER 
+ ************/
+
+footer
+{
+	font-size: .75rem;
+	text-align: center;
+
+	clear: both;
+}
+
+/********************
+	contentOptions	
+ ********************/
+
+#contentOptions
+{
+	float: left;
+}
+
+#contentOptions li
+{
+	list-style: none;	
+
+	border: 1px solid black;
+	
+	text-align: center;
+	
+	padding: .5em;
+
+	margin: .25em 0;
+}
+
+/************
+	COLOR 
+ ************/
+
 body
 {
-	background-color: orange;
+	background-color: white;
 }
