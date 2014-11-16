@@ -53,19 +53,19 @@ footer
 #contentOptions
 {
 	float: left;
+	position: fixed;
+	display: block;
+	width: 6em;
 }
 
+#contentOptions ul
+{
+	padding: 0 0;
+}
 #contentOptions li
 {
 	list-style: none;	
-
-	border: 1px solid black;
-	
-	text-align: center;
-	
-	padding: .5em;
-
-	margin: .25em 0;
+	margin: 1em 0;
 }
 
 /************
