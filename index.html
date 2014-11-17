@@ -6,6 +6,9 @@
 		<meta charset="utf-8" />
 		<title>My Pantry</title>
 
+		<!-- Import Google Fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+
 		<!-- Import CSS -->
 		<link rel="stylesheet" href="css/main.css" type="text/css" />
 
@@ -14,60 +17,74 @@
 
 		<div id="wrapper" >
 			
-			<!-- Holds the navigation and title -->
-			<header>
-			
-				<h3>
-					My Pantry
-				</h3>
+			<div id="sidebar" class="left" >
 
-				<nav>
+				<div id="logo" >
 
+					<img src="img/logo.png" alt="fruit logo" />
+
+				</div> <!-- logo -->
+
+				<!-- This is a side panel to modify content -->
+				<div id="contentOptions"  >			
+					
 					<ul>
-						<li>My Pantries</li>
-						<li>|</li>
-						<li>New Pantry</li>
-						<li>|</li>
-						<li>Add Items</li>
+						<li>|+| Add</li>
+						<li>|%| Edit</li>
+						<li>|-| Delete</li>
+						<li>Something</li>
+						<li>Something</li>
 					</ul>
+					
+				</div> <!-- contentOptions -->
 
-				</nav>
+			</div> <!-- sidebar -->
 
-			</header>
+			<div id="mainBody" >
+				<!-- Holds the navigation and title -->
+				<header>
 				
-			<!-- This is a side panel to modify content -->
-			<div id="contentOptions" class="left" >			
-				
-				<ul>
-					<li>|+| Add</li>
-					<li>|%| Edit</li>
-					<li>|-| Delete</li>
-					<li>Something</li>
-					<li>Something</li>
-				</ul>
-				
-			</div> <!-- contentOptions -->
-			
-			<!-- Main area to display content -->
-			<div id="contentBody" class="right container" >
+					<h3>
+						My Pantry
+					</h3>
 
-				
-				
-			</div> <!-- contentBody -->
+					<nav>
 
-			<footer>
-				
-				<p>
-					The Pantry App is open source
-				</p>	
+						<ul>
+							<li>My Pantries</li>
+							<li>|</li>
+							<li>New Pantry</li>
+							<li>|</li>
+							<li>Add Items</li>
+						</ul>
 
-			</footer>
+					</nav>
+
+				</header>
+					
+							
+				<!-- Main area to display content -->
+				<div id="contentBody" class="right container" >
+
+					
+					
+				</div> <!-- contentBody -->
+
+				<footer>
+					
+					<p>
+						The Pantry App is open source
+					</p>	
+
+				</footer>
+
+			</div> <!-- mainBody -->
 
 		</div> <!-- wrapper -->
 
-	<!-- Add Jquery and Javascript -->
-	<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js?ver=1.4.2'></script>
-	<script src="js/app.js" ></script> 
+		<!-- Add Jquery and Javascript -->
+		<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js?ver=1.4.2'></script>
+		<script src="js/app.js" ></script> 
 
 	</body>
 	

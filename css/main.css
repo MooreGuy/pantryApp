@@ -11,6 +11,12 @@ html
 	font-size: 16px;
 }
 
+#wrapper
+{
+	max-width: 720px;
+	margin: auto;
+}
+
 
 
 /************
@@ -20,14 +26,28 @@ html
 header
 {
 	border: solid .075em black;
-
-	text-align: center;
-	
+	text-align: center;	
 	padding: .25em 0;
+}
+
+header h3
+{
+	font-family: "Oswald", sans-serif;
+	font-weight: 800;
+	letter-spacing: 0.2em;
+}
+
+/* To clear werid padding issues in fireofox. */
+nav ul
+{
+	padding-left: 0;
 }
 
 nav li
 {
+	font-family: "Oswald", sans-serif;
+	letter-spacing: 0.2em;
+
 	display: inline-block;
 	margin: 0 .5em;
 }	
@@ -47,10 +67,10 @@ footer
 }
 
 /********************
-	contentOptions	
+	SIDEBAR	
  ********************/
 
-#contentOptions
+#sidebar
 {
 	float: left;
 	position: fixed;
@@ -58,14 +78,35 @@ footer
 	width: 6em;
 }
 
+#logo img
+{
+	max-width: 6em;
+}
+
 #contentOptions ul
 {
 	padding: 0 0;
 }
+
 #contentOptions li
 {
+	font-family: "Oswald", sans-serif;
+	font-weight: 300;
+	letter-spacing: 0.1em;
+
 	list-style: none;	
 	margin: 1em 0;
+}
+
+/********************
+	MAINBODY	
+ ********************/
+
+#mainBody
+{
+	float: left;
+	display: inline;
+	padding: 0 0 0 7em;
 }
 
 /************
