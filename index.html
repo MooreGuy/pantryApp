@@ -23,25 +23,27 @@
 			<div id="sidebar" >
 
 				<div id="logo" >
-
+					
 					<img src="img/logo.png" alt="fruit logo" />
-
+					
 				</div> <!-- logo -->
 
-			</div> <!-- sidebar -->
+			
 
-			<!-- This is a side panel to modify content -->
-			<div id="contentOptions"  >			
+				<!-- This is a side panel to modify content -->
+				<div id="contentOptions"  >			
 				
-				<ul>
-					<li>|+| Add</li>
-					<li>|%| Edit</li>
-					<li>|-| Delete</li>
-					<li>Something</li>
-					<li>Something</li>
-				</ul>
+					<ul>
+						<li id="add">|+| Add</li>
+						<li>|%| Edit</li>
+						<li>|-| Delete</li>
+						<li>Something</li>
+						<li>Something</li>
+					</ul>
 				
-			</div> <!-- contentOptions -->
+				</div> <!-- contentOptions -->
+			
+			</div> <!-- sidebar -->
 
 			<div id="mainBody" >
 
@@ -70,16 +72,28 @@
 				<!-- Main area to display content -->
 				<div id="contentBody" class="right container" >
 
-					<table id="currentPantry" >
-						<tbody>
+				<table id="currentPantry" >
+					
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Type</th>
+							<th>Quantity</th>
+							<th>Expiration Date</th>
+						</tr>
+					</thead>
+					
+					<tbody>
+						
 							<tr>
 								<td>test!</td>
 								<td>test!</td>
 								<td>test!</td>
 								<td>test!</td>
 							</tr>
-						</tbody>	
-					</table>
+							
+					</tbody>	
+				</table>
 					
 				</div> <!-- contentBody -->
 
