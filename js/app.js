@@ -16,6 +16,10 @@ var createRow = function ( elements )
 	return newRow;
 }
 
+var deleteItem = function ()
+{
+	$("#currentPantry tr:last").remove();
+};
 
 var addItem = function ()
 {
@@ -24,3 +28,4 @@ var addItem = function ()
 };
 
 $("#add").click(addItem);
+$("#delete").click(deleteItem);
