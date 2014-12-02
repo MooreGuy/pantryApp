@@ -18,6 +18,7 @@
 
 	<body>
 
+	<?php echo "<p>hello</p>"; ?>
 		<div id="wrapper" >
 			
 			<div id="sidebar" >
