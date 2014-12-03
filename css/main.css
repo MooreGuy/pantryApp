@@ -114,22 +114,66 @@ footer
 	CURRENT PANTRY TABLE	
  ************************/
 
-#currentPantry
+.currentPantry
 {
-	margin: .5em auto;
-	border: 1px solid black;
 	
 	font-family: "Oswald", sans-serif;
+	font-size: .75rem;
 	
 	width: 100%;
+	padding: 1em;
+	margin: 1em auto;
+	border: 1px solid #AAA;
+	
+	/* remove individual cell borders */
+	border-collapse: collapse;
+
 }
 
+.currentPantry thead
+{
+	color: orange;
+}
 
-
-#currentPantry td
+.checkbox
 {
 	border: 1px solid #AAA;
-	padding: 0.25em;
+	margin: .25em;
+	height: 1em;
+	width: 1em;
+}
+
+.currentPantry td
+{
+	border: 1px solid #AAA;
+	padding: 0.5em;
+
+	/* Thank you CSS tricks */
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/* Set row widths */
+.row-checkBox
+{
+	width: 5%;
+}
+.row-name
+{
+	width: 35%;
+}
+.row-type
+{
+	width: 35%;
+}
+.row-quatity
+{
+	width: 5%;
+}
+.row-expiration
+{
+	width: 20%;
 }
 
 

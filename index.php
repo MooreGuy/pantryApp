@@ -73,22 +73,28 @@
 				<!-- Main area to display content -->
 				<div id="contentBody" class="right container" >
 
-				<table id="currentPantry" >
+				<table class="currentPantry" >
 					
 					<thead>
 						<tr>
-							<td class="checkbox" >x</td>
-							<th>Name</th>
-							<th>Type</th>
-							<th>Quantity</th>
-							<th>Expiration Date</th>
+							<td class="row-checkBox">
+								<div class="checkbox"> 
+								</div>
+							</td>
+							<th class="row-name">Name</th>
+							<th class="row-type">Type</th>
+							<th class="row-quatity">Quantity</th>
+							<th class="row-expiration">Expiration Date</th>
 						</tr>
 					</thead>
 					
 					<tbody>
 						
 							<tr>
-								<td class="checkbox" >x</td>
+								<td>
+									<div class="checkbox"> 
+									</div>
+								</td>
 								<td>test!</td>
 								<td>test!</td>
 								<td>test!</td>
