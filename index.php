@@ -77,6 +77,7 @@
 					
 					<thead>
 						<tr>
+							<td class="checkbox" >x</td>
 							<th>Name</th>
 							<th>Type</th>
 							<th>Quantity</th>
@@ -87,6 +88,7 @@
 					<tbody>
 						
 							<tr>
+								<td class="checkbox" >x</td>
 								<td>test!</td>
 								<td>test!</td>
 								<td>test!</td>
