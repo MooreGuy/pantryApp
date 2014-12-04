@@ -18,7 +18,6 @@
 
 	<body>
 
-	<?php echo "<p>hello</p>"; ?>
 		<div id="wrapper" >
 			
 			<div id="sidebar" >
@@ -62,7 +61,7 @@
 							<li>|</li>
 							<li>New Pantry</li>
 							<li>|</li>
-							<li>Add Items</li>
+							<li>Sign Out</li>
 						</ul>
 
 					</nav>
@@ -89,19 +88,26 @@
 					</thead>
 					
 					<tbody>
-						
-							<tr>
-								<td>
-									<div class="checkbox"> 
-									</div>
-								</td>
-								<td>test!</td>
-								<td>test!</td>
-								<td>test!</td>
-								<td>test!</td>
-							</tr>
-							
+
+					<?php
+					 include 'php/Database.php';	
+					 $pdo = Database::connect();
+					 $sql = 'SELECT * FROM foods ORDER BY id DESC';
+					 foreach ($pdo->query($sql) as $row)
+					 {
+						echo '<tr>';
+						echo '<td><div class="checkbox"></div></td>';
+						echo '<td>' . $row['name'] . '</td>';
+						echo '<td>' . $row['type'] . '</td>';
+						echo '<td>' . $row['quantity'] . '</td>';
+						echo '<td>' . $row['expiration_date'] . '</td>';
+						echo '</tr>';
+					}
+					Database::disconnect();
+					?>
+
 					</tbody>	
+
 				</table>
 					
 				</div> <!-- contentBody -->
