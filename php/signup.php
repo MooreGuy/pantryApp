@@ -1,3 +1,42 @@
+<?php
+
+include 'Database.php';
+
+session_start();
+
+if(!isset($_SESSION['count']))
+{
+	$_SESSION['count'] = 0;
+}
+else
+{
+	$_SESSION['count']++;
+}
+
+if(isset($_POST['firstname']))
+{
+	$password = $_POST['password'];
+	
+	$hashpassword = password_hash($password, PASSWORD_DEFAULT);
+ 
+	$firstname = $_POST['firstname'];
+	$lastname = $_POST['lastname'];
+	$email = $_POST['email'];
+
+	
+	$pdo = Database::connect();
+	$sql = 'INSERT INTO users ( email, password, firstname, lastname ) values(?, ?, ?, ?)';
+	$query = $pdo->prepare($sql);
+	$query->execute(array( $email, $hashpassword, $firstname, $lastname ));
+		
+	$_SESSION['email'] = $email;
+	$_SESSION['login'] = true;	
+
+	http_redirect("../index.php",null,false);
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -11,7 +50,7 @@
 		<link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
 
 		<!-- Import CSS -->
-		<link rel="stylesheet" href="../css/main.css" type="text/css" />
+		<link rel="stylesheet" href="../css/form.css" type="text/css" />
 
 	</head>
 
@@ -19,6 +58,8 @@
 	<body>
 
 		<div id="wrapper" >
+			
+			<?php echo $sessioninfo; ?>
 			
 			<div id="mainBody" >
 				
@@ -39,29 +80,30 @@
 						Sign Up
 					</h3>
 
-					<form  action="#" method="post">
-						<div>
-							<label for="POST-username">Username</label>
-						</div>	
-						<div>
-							<input id="POST-name" type="text" name="name">
-						</div>
-						<div>
-							<label for="POST-password">Password</label>
-						</div>
-						<div>
-							<input id="POST-password" type="password" name="password">
-						</div>
-						<div>
-							<label for="POST-email">E-Mail</label>
+					<form  action="signup.php" method="post">
+						
+						<!-- First Name (firstname) -->
+						<label for="firstname">First Name</label>
+						<input name="firstname" id="name" type="text" data-validation-length="max32" >
 
-						</div>
-						<div>
-							<input for="POST-email" name="email">
-						</div>
-						<div>
-							<input type="submit" value="Sign Up!">
-						</div>
+						<!-- Last Name (lastname) -->
+						<label for="lastname" >Last Name</label>
+						<input id="lastname" name="lastname" type="text" data-validation-length="max32" >
+
+						<!-- Email (email) -->
+						<label for="email">E-Mail</label>
+						<input id="email" name="email" type="email" data-validation-length="max32">
+
+						<!-- Password (password) -->
+						<label for="password" >Password</label>
+						<input id="password" name="password" type="password" data-validation-length="max32" >
+							
+						<!-- Password (confpassword) -->
+						<label for="confpassword" >Confirm Password</label>
+						<input id="confpassword" type="password" data-validation-length="max32" >
+
+						<!-- Sign up button! -->
+						<input type="submit" value="Sign Up!">
 					</form>
 
 				</div> <!-- Sign up box -->
@@ -79,6 +121,10 @@
 		</div> <!-- wrapper -->
 
 	</body>
-	
+
+	<!-- JQuery CDN -->
+	<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js?ver=1.4.2'></script>
+	<!-- JQuery Validate plugin -->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.1.47/jquery.form-validator.min.js"></script>	
 
 </html>

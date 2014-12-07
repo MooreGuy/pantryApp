@@ -34,7 +34,7 @@
 				<div id="contentOptions"  >			
 				
 					<ul>
-						<li id="add">|+| Add</li>
+						<li id="add"><button>|+| Add</button></li>
 						<li>|%| Edit</li>
 						<li id="delete">|-| Delete</li>
 						<li>Something</li>

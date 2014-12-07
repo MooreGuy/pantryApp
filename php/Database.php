@@ -20,12 +20,20 @@ class Database
 		//Use only one connection
 		if( self::$cont == null )
 		{
+
 			try
 			{	
+	
+	
 				self::$cont = new PDO( "mysql:host=" . self::$dbHost . ";" . "dbname=" . self::$dbName, self::$dbUsername, self::$dbUserPassword);
+	
 			}
 			catch (PDOException $e)
 			{
+		
+		echo "this is thing:";
+		var_dump($self::$cont);
+				
 				die($e->getMessage());
 			}
 		}
