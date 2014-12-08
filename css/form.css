@@ -50,6 +50,8 @@ header h3
 	font-weight: 800;
 	letter-spacing: 0.1em;
 	font-size: 2rem;
+	
+	color: #fff;
 }
 
 /* To clear werid padding issues in fireofox. */
