@@ -14,7 +14,7 @@
 		<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
 
 		<!-- Import CSS reset -->
-		<link rel="stylesheet" href="css/landing.css" type="text/css" />
+		<link rel="stylesheet" href="css/reset.css" type="text/css" />
 
 		<!-- Import CSS -->
 		<link rel="stylesheet" href="css/landing.css" type="text/css" />
@@ -31,8 +31,18 @@
 	
 				<header>
 
-					<img src="img/logo.png" alt="logo" />
-					<h3>Cloud Pantry</h3>	
+					<div class="left" >
+
+						<img src="img/logo.png" alt="logo" />
+
+					</div> <!-- left/ img -->
+
+					<div class="left" > 
+
+						<h3>Cloud Pantry</h3>	
+
+					</div> <!-- left name  -->
+
 
 				</header>
 					
