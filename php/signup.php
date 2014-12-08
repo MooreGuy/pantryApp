@@ -13,11 +13,13 @@ else
 	$_SESSION['count']++;
 }
 
+
+
 if(isset($_POST['firstname']))
 {
 	$password = $_POST['password'];
 	
-	$hashpassword = password_hash($password, PASSWORD_DEFAULT);
+	$hashpassword = password_hash($pass, PASSWORD_DEFAULT);
  
 	$firstname = $_POST['firstname'];
 	$lastname = $_POST['lastname'];
@@ -29,10 +31,14 @@ if(isset($_POST['firstname']))
 	$query = $pdo->prepare($sql);
 	$query->execute(array( $email, $hashpassword, $firstname, $lastname ));
 		
-	$_SESSION['email'] = $email;
-	$_SESSION['login'] = true;	
 
-	http_redirect("../index.php",null,false);
+	//Now add the session to the session table
+	$sql = 'INSERT INTO sessions ( id, time) values( ?, ?)';
+	$query = $pdo->prepare($sql);
+	$query->execute(array( session_id(), date().time()));
+
+	header("Location: http://guymoore.me/index.php");
+
 }
 
 ?>
@@ -59,7 +65,6 @@ if(isset($_POST['firstname']))
 
 		<div id="wrapper" >
 			
-			<?php echo $sessioninfo; ?>
 			
 			<div id="mainBody" >
 				
@@ -92,15 +97,15 @@ if(isset($_POST['firstname']))
 
 						<!-- Email (email) -->
 						<label for="email">E-Mail</label>
-						<input id="email" name="email" type="email" data-validation-length="max32">
+						<input id="email" name="email" type="email" data-validation-length="max60">
 
 						<!-- Password (password) -->
-						<label for="password" >Password</label>
-						<input id="password" name="password" type="password" data-validation-length="max32" >
+						<label for="pass_confirmation" >Password</label>
+						<input id="pass_confirmation" name="pass_confirmation" type="password" data-validation="length" data-validation-length="min8" >
 							
 						<!-- Password (confpassword) -->
-						<label for="confpassword" >Confirm Password</label>
-						<input id="confpassword" type="password" data-validation-length="max32" >
+						<label for="pass" >Confirm Password</label>
+						<input id="pass" name="pass" type="password" data-validation="confirmation" >
 
 						<!-- Sign up button! -->
 						<input type="submit" value="Sign Up!">
@@ -126,5 +131,10 @@ if(isset($_POST['firstname']))
 	<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js?ver=1.4.2'></script>
 	<!-- JQuery Validate plugin -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.1.47/jquery.form-validator.min.js"></script>	
+	<script>
+	  $.validate({
+	    modules : 'security'
+	  });
+	</script>	
 
 </html>
