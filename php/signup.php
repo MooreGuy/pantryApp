@@ -72,12 +72,6 @@ if(isset($_POST['firstname']))
 					<img src="../img/logo.png" alt="Logo" />
 				</div>
 
-				<header>
-
-					<h3>
-						Pantry App
-					</h3>
-				</header>
 
 				<div class="signUpBox" >
 	

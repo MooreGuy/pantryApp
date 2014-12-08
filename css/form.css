@@ -28,47 +28,6 @@ html
 }
 
 
-/************
-	HEADER
- ************/
-
-header
-{
-	border: solid .075em #AAA;
-	text-align: center;	
-	
-
-	
-	/* Make the heading take up the entire page */
-	width: 100%;
-	margin: .5em 0;
-}
-
-header h3
-{
-	font-family: "Oswald", sans-serif;
-	font-weight: 800;
-	letter-spacing: 0.1em;
-	font-size: 2rem;
-	
-	color: #fff;
-}
-
-/* To clear werid padding issues in fireofox. */
-nav ul
-{
-	padding-left: 0;
-}
-
-nav li
-{
-	font-family: "Oswald", sans-serif;
-	letter-spacing: 0.2em;
-
-	display: inline-block;
-	margin: 0 .5em;
-}	
-
 
 
 /************
