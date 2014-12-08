@@ -13,6 +13,9 @@
 		<!-- Import roboto condensed -->
 		<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
 
+		<!-- Import CSS reset -->
+		<link rel="stylesheet" href="css/landing.css" type="text/css" />
+
 		<!-- Import CSS -->
 		<link rel="stylesheet" href="css/landing.css" type="text/css" />
 
