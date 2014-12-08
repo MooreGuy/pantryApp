@@ -17,15 +17,16 @@ html
 	margin: auto;
 }
 
-
-/********************
-	FORM	
- ********************/
-
-input, label
+.logoBar
+{
+	margin: 2em 0;
+}
+.logoBar img
 {
 	display: block;
+	margin: 10px auto;
 }
+
 
 /************
 	HEADER
@@ -47,7 +48,8 @@ header h3
 {
 	font-family: "Oswald", sans-serif;
 	font-weight: 800;
-	letter-spacing: 0.2em;
+	letter-spacing: 0.1em;
+	font-size: 2rem;
 }
 
 /* To clear werid padding issues in fireofox. */
@@ -78,53 +80,57 @@ footer
 	font-family: "Oswald", sans-serif;
 	font-weight: 300;
 	letter-spacing: 0.1em;
+
+	clear: both;
 	
 
 }
 
 /********************
-	SIDEBAR	
+	FORM		
  ********************/
-
-#sidebar
+.signUpBox
 {
-	position: fixed;
-	width: 6em;
-}
+	width: 75%;
+	margin: 0 auto;
 
-#logo img
-{
-	max-width: 6em;
-}
-
-#contentOptions ul
-{
-	padding: 0 0;
-}
-
-#contentOptions li
-{
+	font-size: 1em;
+	text-align: center;
 	font-family: "Oswald", sans-serif;
 	font-weight: 300;
 	letter-spacing: 0.1em;
 
-	list-style: none;	
-	margin: 1em 0;
 }
-
-/********************
-	MAINBODY	
- ********************/
-
-#mainBody
+.signUpBox h3
 {
+	text-align: center;
 }
+
+.signUpBox input
+{
+	width: 50%;
+	border-radius: 5px;
+	padding: .5rem;
+	margin: .5rem 0;
+	
+}
+.button
+{
+	background-color:#337ab7;
+	color: #FFF;
+}
+
 
 /************
 	COLOR 
  ************/
 
+header
+{
+	background-color: #337ab7;
+}
+
 body
 {
-	background-color: white;
+	background-color: #eee;
 }

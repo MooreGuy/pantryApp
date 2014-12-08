@@ -43,6 +43,14 @@
 
 					</div> <!-- left name  -->
 
+					<div class="right" >
+
+						<a href="php/login.php">Sign In</a>
+
+					</div> <!-- sign in -->
+					<div class="right" >
+						<a href="php/signup.php" >Create Account</a>
+					</div> <!-- Sign up -->
 
 				</header>
 					

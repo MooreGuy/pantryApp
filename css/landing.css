@@ -5,14 +5,16 @@
 #wrapper
 {
 	max-width: 100%;	
+	
 }
 
-.mainBody
+.container1
 {
 	
 	background-image: url(../img/pantryBackground.jpg);
 	background-size: 100% 100%;
 	width: 100%;
+	
 }
 
 /******************************************
@@ -22,7 +24,8 @@
 
 .container1
 {
-	height: 1000px;
+	height: 1200px;
+	clear: both;
 }	
 /***************************************
 	HEADER	
@@ -34,7 +37,9 @@ img
 
 header
 {
-	padding: 3rem 3rem;
+	padding: 0.5rem 0 0.5rem 3rem;
+
+	overflow: auto;
 }
 
 header .left
@@ -51,7 +56,7 @@ header h3
 {	
 	display: block;
 	font-family: "Oswald", sans-serif; 
-	font-weight: 400;
+	font-weight: 700;
 	font-size: 3.5rem;
 
 	
@@ -61,16 +66,36 @@ header h3
 	border-radius: 5px;
 }
 
+header a
+{
+	text-decoration: none;
+	
+	font-family: "Oswald", sans-serif; 
+	font-weight: 400;
+	font-size: 1rem;
+
+	margin: 0.25rem;
+	padding: 0.25rem;
+}
+
 /* color */
 
+header
+{
+	background-color: #eee;
+}
 header h3
 {
 	
-	color: #A68F4C;
-/* #E6D4A7 */
-	background-color: #411A13;
+	color: #FFF;
+/* #E6D4A7 #411A13  #A68F4C*/
+	background-color:#337ab7 ;	
+}
 
-	
+header a
+{	
+	color: #FFF;
+	background-color: #337ab7;	
 }
 
 /***************************************

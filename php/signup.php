@@ -88,27 +88,22 @@ if(isset($_POST['firstname']))
 					<form  action="signup.php" method="post">
 						
 						<!-- First Name (firstname) -->
-						<label for="firstname">First Name</label>
-						<input name="firstname" id="name" type="text" data-validation-length="max32" >
+							<input name="firstname" id="name" type="text" data-validation-length="max32" placeholder="First Name">
 
 						<!-- Last Name (lastname) -->
-						<label for="lastname" >Last Name</label>
-						<input id="lastname" name="lastname" type="text" data-validation-length="max32" >
+							<input id="lastname" name="lastname" type="text" data-validation-length="max32" placeholder="Last Name">
 
 						<!-- Email (email) -->
-						<label for="email">E-Mail</label>
-						<input id="email" name="email" type="email" data-validation-length="max60">
+							<input id="email" name="email" type="email" data-validation-length="max60" placeholder="Email address">
 
 						<!-- Password (password) -->
-						<label for="pass_confirmation" >Password</label>
-						<input id="pass_confirmation" name="pass_confirmation" type="password" data-validation="length" data-validation-length="min8" >
+							<input id="pass_confirmation" name="pass_confirmation" type="password" data-validation="length" data-validation-length="min8" placeholder="Password">
 							
 						<!-- Password (confpassword) -->
-						<label for="pass" >Confirm Password</label>
-						<input id="pass" name="pass" type="password" data-validation="confirmation" >
+							<input id="pass" name="pass" type="password" data-validation="confirmation" placeholder="Confirm Password">
 
 						<!-- Sign up button! -->
-						<input type="submit" value="Sign Up!">
+							<input type="submit" value="Sign Up!" class="button">
 					</form>
 
 				</div> <!-- Sign up box -->
