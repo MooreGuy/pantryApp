@@ -123,6 +123,13 @@ footer
 }
 
 
+/* Push errors below elements */
+.form-error
+{
+	display: block;
+}
+
+
 /************
 	COLOR 
  ************/
