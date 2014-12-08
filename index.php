@@ -25,16 +25,16 @@
 		<div id="wrapper" >
 			<div class="mainBody" >	
 		
+	
+				<header>
+
+					<img src="img/logo.png" alt="logo" />
+					<h3>Cloud Pantry</h3>	
+
+				</header>
+					
 				<div class="container1" >
 
-					<div class="logobox" >
-
-						<h3>Cloud Pantry</h3>
-
-		
-						<img src="img/logo.png" alt="logo" />
-					
-					</div> <!-- logobox -->
 					
 				</div> <!-- container -->
 
