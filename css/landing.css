@@ -15,5 +15,22 @@
 .logobox
 {
 	font-family: "Roboto Condensed", sans-serif; 
+	font-weight: 700;
+	font-size: 2rem;
 }
 
+.container1
+{
+	background-image: url(../img/pantryBackground.jpg);
+	width: 100%;
+}	
+
+/***************************************
+	FOOTER
+***************************************/
+
+footer
+{
+	font-family: 'Oswald', sans-serif;
+	font-weight: 300;
+}

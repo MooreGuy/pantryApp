@@ -25,17 +25,16 @@
 		<div id="wrapper" >
 			<div class="mainBody" >	
 		
-				<div class="container" >
+				<div class="container1" >
 
 					<div class="logobox" >
 
 						<h3>Cloud Pantry</h3>
 
 		
-						<img class="left" src="img/logo.png" alt="logo" />
+						<img src="img/logo.png" alt="logo" />
 					
 					</div> <!-- logobox -->
-<a href="https://www.flickr.com/photos/katiecakes/4632470665" title="Pantry Shelves in May by Kathie Lapcevic, on Flickr"><img src="https://farm5.staticflickr.com/4025/4632470665_e860056692_o.jpg" width="3334" height="3168" alt="Pantry Shelves in May"></a>
 					
 				</div> <!-- container -->
 
