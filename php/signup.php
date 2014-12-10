@@ -11,33 +11,83 @@ if(!isset($_SESSION['count']))
 else
 {
 	$_SESSION['count']++;
+	echo "my session id is: " . session_id();
 }
 
+
+//Check the sessions open for the current session.
+$numSessions = 0;
+
+$currentSession = session_id();
+$pdo = Database::connect();
+$sql = 'SELECT id FROM sessions WHERE id = ?';
+$query = $pdo->prepare( $sql );
+
+$query->execute( array( $currentSession ) );
+$storedSessions = $query->fetchALL(PDO::FETCH_ASSOC);
+
+//Check for sessions in the database matching the users current session
+foreach( $storedSessions as $session )
+{
+	if( $session['id'] == $currentSession )
+	{
+		$numSessions++;
+	}
+}
+
+// If there is a session stored, then send the user to their pantry
+if( $numSessions > 0 )
+{
+	header("Location: http://guymoore.me/php/pantry.php");
+}
 
 
 if(isset($_POST['firstname']))
 {
-	$password = $_POST['password'];
-	
-	$hashpassword = password_hash($pass, PASSWORD_DEFAULT);
- 
-	$firstname = $_POST['firstname'];
-	$lastname = $_POST['lastname'];
+	$emailError = null;
 	$email = $_POST['email'];
 
+	$pdo = Database::connect();	
+	$sql = 'SELECT email FROM users WHERE email = ?';
+	$query = $pdo->prepare($sql);
+	$query->execute( array($email) );
 	
-	$pdo = Database::connect();
-	$sql = 'INSERT INTO users ( email, password, firstname, lastname ) values(?, ?, ?, ?)';
-	$query = $pdo->prepare($sql);
-	$query->execute(array( $email, $hashpassword, $firstname, $lastname ));
+	$storedEmails = $query->fetchAll(PDO::FETCH_ASSOC);
+	
+	foreach( $storedEmails as $databaseEmail )
+	{
+		if( $email == $databaseEmail )
+		{
+			$emailError = "You already have an account!";
+		}
+	}
+
+	if( !isset($emailError) )
+	{
+	
+		$password = $_POST['pass'];
+		$hashpassword = password_hash($password,CRYPT_BLOWFISH );
+		 
+		$firstname = $_POST['firstname'];
+		$lastname = $_POST['lastname'];
 		
+		$pdo = Database::connect();
 
-	//Now add the session to the session table
-	$sql = 'INSERT INTO sessions ( id, time) values( ?, ?)';
-	$query = $pdo->prepare($sql);
-	$query->execute(array( session_id(), date().time()));
+		$sql = 'INSERT INTO users ( email, password, firstname, lastname ) values(?, ?, ?, ?)';
+		$query = $pdo->prepare($sql);
+		$query->execute(array( $email, $hashpassword, $firstname, $lastname ));
+			
+		$myId = session_id();
 
-	header("Location: http://guymoore.me/index.php");
+		//Now add the session to the session table
+		$sql = 'INSERT INTO sessions ( id, time) values( ?, ?)';
+		$query = $pdo->prepare($sql);
+		$query->execute(array( $myId, date().time()));
+
+		Database::disconnect();
+
+		header("Location: http://guymoore.me/php/pantry.php");
+	}
 
 }
 

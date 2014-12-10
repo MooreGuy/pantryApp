@@ -11,21 +11,20 @@
 		<link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
 
 		<!-- Import CSS -->
-		<link rel="stylesheet" href="css/main.css" type="text/css" />
+		<link rel="stylesheet" href="../css/main.css" type="text/css" />
 
 	</head>
 
 
 	<body>
 
-		<?php echo "<p>session: " . $_SESSION['count'] . "</p>"; ?>
 		<div id="wrapper" >
 			
 			<div id="sidebar" >
 
 				<div id="logo" >
 					
-					<img src="img/logo.png" alt="fruit logo" />
+					<img src="../img/logo.png" alt="fruit logo" />
 					
 				</div> <!-- logo -->
 
@@ -91,7 +90,7 @@
 					<tbody>
 
 					<?php
-					 include 'php/Database.php';	
+					 include 'Database.php';	
 					 $pdo = Database::connect();
 					 $sql = 'SELECT * FROM foods ORDER BY id DESC';
 					 foreach ($pdo->query($sql) as $row)
