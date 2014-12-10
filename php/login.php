@@ -38,7 +38,7 @@ foreach( $temp as $session )
 // If there is a session stored, then send the user to their pantry
 if( $numAuthenticatedSessions > 0 )
 {
-	header("Location: http://guymoore.me/index.php");
+	header("Location: http://guymoore.me/php/pantry.php");
 }
 
 
@@ -66,19 +66,11 @@ if(isset($_POST['pass']))
 	$i = 0;
 	$temp = $result->fetchAll(PDO::FETCH_ASSOC);
 
-	$myvar = password_verify($password, $temp[0]['password']);
-	var_dump($myvar);
 	if(password_verify($password, $temp[0]['password']))
 	{	
 		$authenticated = true;
-		echo "YESS";
-	}
-	else
-	{
-		echo "AWWW";
 	}
 	
-	/*
 	//Disconect the database.
 	Database::disconnect();	
 
@@ -93,13 +85,12 @@ if(isset($_POST['pass']))
 		$query = $pdo->prepare($sql);
 		$query->execute(array( $myId, date().time()));
 
-		header("Location: http://guymoore.me/index.php");
+		header("Location: http://guymoore.me/php/pantry.php");
 	}
 	else
 	{
 		$authenticationError = "Email or Password are incorrect";
 	}
-	*/
 }
 
 ?>
