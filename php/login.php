@@ -27,9 +27,9 @@ $storedSessions = $storedSessions->fetchALL(PDO::FETCH_ASSOC);
 
 //Check for sessions in the database matching the users current session
 $numAuthenticatedSessions = 0;
-foreach( $temp as $session )
+foreach( $storedSessions as $session )
 {
-	if( $session == $currentSession )
+	if( $session['id'] == $currentSession )
 	{
 		$numAuthenticatedSessions++;
 	}
