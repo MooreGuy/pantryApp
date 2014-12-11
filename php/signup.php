@@ -56,8 +56,10 @@ if(isset($_POST['firstname']))
 	
 	foreach( $storedEmails as $databaseEmail )
 	{
-		if( $email == $databaseEmail )
+		echo "testing";
+		if( $email == $databaseEmail['email'] )
 		{
+			echo "found a match";
 			$emailError = "You already have an account!";
 		}
 	}
@@ -82,11 +84,14 @@ if(isset($_POST['firstname']))
 		//Now add the session to the session table
 		$sql = 'INSERT INTO sessions ( id, time) values( ?, ?)';
 		$query = $pdo->prepare($sql);
-		$query->execute(array( $myId, date().time()));
+
+		$date = date('m/d/Y h:i:s', time());
+		echo $date;
+		$query->execute(array( $myId, $date));
 
 		Database::disconnect();
 
-		header("Location: http://guymoore.me/php/pantry.php");
+		/*header("Location: http://guymoore.me/php/pantry.php");*/
 	}
 
 }
@@ -146,8 +151,14 @@ if(isset($_POST['firstname']))
 						<!-- Password (confpassword) -->
 							<input id="pass" name="pass" type="password" data-validation="confirmation" placeholder="Confirm Password">
 
+						<!-- Email error -->
+							<?php if( !empty( $emailError )): ?>
+								<div class="emailError" ><?php echo $emailError;?></div>
+							<?php endif;?>
+
 						<!-- Sign up button! -->
 							<input type="submit" value="Sign Up!" class="button">
+								
 					</form>
 
 				</div> <!-- Sign up box -->

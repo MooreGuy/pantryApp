@@ -10,9 +10,6 @@
 		<!-- Import Google Fonts -->
 		<link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
 		
-		<!-- Import roboto condensed -->
-		<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
-
 		<!-- Import CSS reset -->
 		<link rel="stylesheet" href="css/reset.css" type="text/css" />
 
