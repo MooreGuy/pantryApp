@@ -57,11 +57,11 @@
 					<nav>
 
 						<ul>
-							<li>My Pantries</li>
+							<li><button>My Pantries</button></li>
 							<li>|</li>
-							<li><a href="foods.php" >My Foods</a></li>
+							<li><button><a href="foods.php" >My Foods</a></button></li>
 							<li>|</li>
-							<li><a href="logout.php" >Log out</a></li>
+							<li><button><a href="logout.php" >Log out</a></button></li>
 						</ul>
 
 					</nav>
@@ -72,43 +72,49 @@
 				<!-- Main area to display content -->
 				<div id="contentBody" class="right container" >
 
-				<table class="currentPantry" >
-					
-					<thead>
-						<tr>
-							<td class="row-checkBox">
-								<div class="checkbox"> 
-								</div>
-							</td>
-							<th class="row-name">Name</th>
-							<th class="row-type">Type</th>
-							<th class="row-quatity">Quantity</th>
-							<th class="row-expiration">Expiration Date</th>
-						</tr>
-					</thead>
-					
-					<tbody>
+				<form class="pantryForm" >
+					<table class="currentPantry" >
+						
+						<thead>
+							<tr>
+								<td class="row-checkBox">
+									<div class="checkbox"> 
+									</div>
+								</td>
+								<th class="row-name">Name</th>
+								<th class="row-type">Type</th>
+								<th class="row-quatity">Quantity</th>
+								<th class="row-expiration">Expiration Date</th>
+							</tr>
+						</thead>
+						
+						<tbody>
 
-					<?php
-					 include 'Database.php';	
-					 $pdo = Database::connect();
-					 $sql = 'SELECT * FROM foods ORDER BY id DESC';
-					 foreach ($pdo->query($sql) as $row)
-					 {
-						echo '<tr>';
-						echo '<td><div class="checkbox"></div></td>';
-						echo '<td>' . $row['name'] . '</td>';
-						echo '<td>' . $row['type'] . '</td>';
-						echo '<td>' . $row['quantity'] . '</td>';
-						echo '<td>' . $row['expiration_date'] . '</td>';
-						echo '</tr>';
-					}
-					Database::disconnect();
-					?>
+						<!-- Populate the table with foods -->
 
-					</tbody>	
+						<?php
 
-				</table>
+						 include 'Database.php';	
+						 $pdo = Database::connect();
+						 $sql = 'SELECT * FROM foods ORDER BY id DESC';
+						 foreach ($pdo->query($sql) as $row)
+						 {
+							echo '<tr>';
+							echo '<td><div class="checkbox"></div></td>';
+							echo '<td>' . $row['name'] . '</td>';
+							echo '<td>' . $row['type'] . '</td>';
+							echo '<td>' . $row['quantity'] . '</td>';
+							echo '<td>' . $row['expiration_date'] . '</td>';
+							echo '</tr>';
+						}
+
+						Database::disconnect();
+						?>
+
+						</tbody>	
+
+					</table>
+				</form>
 					
 				</div> <!-- contentBody -->
 
@@ -128,7 +134,6 @@
 		<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js?ver=1.4.2'></script>
 		<script src="js/app.js" ></script> 
 
-	</body>
-	
+	</body>	
 
 </html>
