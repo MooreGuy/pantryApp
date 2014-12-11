@@ -59,9 +59,9 @@
 						<ul>
 							<li>My Pantries</li>
 							<li>|</li>
-							<li><a href="signup.php" >Sign Up</a></li>
+							<li><a href="foods.php" >My Foods</a></li>
 							<li>|</li>
-							<li><a href="logout.php" >Sign Out</a></li>
+							<li><a href="logout.php" >Log out</a></li>
 						</ul>
 
 					</nav>

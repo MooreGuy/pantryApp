@@ -11,7 +11,6 @@ if(!isset($_SESSION['count']))
 else
 {
 	$_SESSION['count']++;
-	echo "my session id is: " . session_id();
 }
 
 
@@ -56,10 +55,8 @@ if(isset($_POST['firstname']))
 	
 	foreach( $storedEmails as $databaseEmail )
 	{
-		echo "testing";
 		if( $email == $databaseEmail['email'] )
 		{
-			echo "found a match";
 			$emailError = "You already have an account!";
 		}
 	}
@@ -86,7 +83,6 @@ if(isset($_POST['firstname']))
 		$query = $pdo->prepare($sql);
 
 		$date = date('m/d/Y h:i:s', time());
-		echo $date;
 		$query->execute(array( $myId, $date));
 
 		Database::disconnect();
