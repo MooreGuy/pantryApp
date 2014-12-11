@@ -14,7 +14,6 @@ if(!isset($_SESSION['count']))
 else
 {
 	$_SESSION['count']++;
-	echo "my session id is: " . session_id();
 }
 
 //Check if the user has a valid session
@@ -46,10 +45,9 @@ if( $numAuthenticatedSessions > 0 )
 if(isset($_POST['pass']))
 {
 
-	$authenticationError = null;
+	$loginError = "Please enter your correct email and password.";
 
 
-	$authenticated = false;
 	//store post variables
 	$password = $_POST['pass']; 
 	$email = $_POST['email'];
@@ -64,18 +62,18 @@ if(isset($_POST['pass']))
 	$result = $pdo->prepare($sql);
 	$result->execute( array($email) );
 	$i = 0;
-	$temp = $result->fetchAll(PDO::FETCH_ASSOC);
+	$dPassword = $result->fetchAll(PDO::FETCH_ASSOC);
 
-	if(password_verify($password, $temp[0]['password']))
+	if(password_verify($password, $dPassword[0]['password']))
 	{	
-		$authenticated = true;
+		$loginError = null;
 	}
 	
 	//Disconect the database.
 	Database::disconnect();	
 
 	//Now add the session to the sessions table
-	if( $authenticated == true )
+	if( empty( $loginError ) )
 	{
 		//store the current session id
 		$myId = session_id();
@@ -86,10 +84,6 @@ if(isset($_POST['pass']))
 		$query->execute(array( $myId, date().time()));
 
 		header("Location: http://guymoore.me/php/pantry.php");
-	}
-	else
-	{
-		$authenticationError = "Email or Password are incorrect";
 	}
 }
 
@@ -132,11 +126,6 @@ if(isset($_POST['pass']))
 					</h3>
 
 					<form  action="login.php" method="post">
-						<?php 
-							if( !empty( $authenticationError )):?>
-
-								<span class="help-error"<?php echo $authenticationError;?></span>
-						<?php endif;?>
 
 						<!-- Email (email) -->
 							<input id="email" name="email" type="email" data-validation-length="max60" placeholder="Email address">
@@ -144,6 +133,11 @@ if(isset($_POST['pass']))
 						<!-- Password (password) -->
 							<input id="pass" name="pass" type="password" placeholder="Password">
 							
+
+						<!-- Email error -->
+							<?php if( !empty( $loginError )): ?>
+								<div class="loginError" ><?php echo $loginError;?></div>
+							<?php endif;?>
 
 						<!-- Sign up button! -->
 							<input type="submit" value="Sign in" class="button">
