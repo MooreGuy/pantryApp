@@ -72,7 +72,6 @@
 				<!-- Main area to display content -->
 				<div id="contentBody" class="right container" >
 
-				<form class="pantryForm" >
 					<table class="currentPantry" >
 						
 						<thead>
@@ -114,8 +113,7 @@
 						</tbody>	
 
 					</table>
-				</form>
-					
+				
 				</div> <!-- contentBody -->
 
 				<footer>
