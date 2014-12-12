@@ -21,6 +21,7 @@ html
 {
 	margin: 2em 0;
 }
+
 .logoBar img
 {
 	display: block;
@@ -75,6 +76,7 @@ footer
 	margin: .5rem 0;
 	
 }
+
 .button
 {
 	background-color:#337ab7;

@@ -17,6 +17,39 @@ html
 	margin: auto;
 }
 
+a
+{
+	text-decoration: none;
+	color: white;
+}
+
+h3
+{	
+	font-family: "Oswald", sans-serif; 
+	font-weight: 700;
+	font-size: 2rem;
+	color: orange;
+}
+
+.button:hover
+{
+	background-color: #2269a6;
+}
+	
+.button
+{
+	background-color:#337ab7;
+	color: #FFF;
+
+	border-radius: 5px;
+	padding: .25rem;
+	margin: .25rem 0;
+}
+
+li
+{
+	text-align: center;
+}
 
 
 /************
@@ -39,7 +72,7 @@ header h3
 {
 	font-family: "Oswald", sans-serif;
 	font-weight: 800;
-	letter-spacing: 0.2em;
+	letter-spacing: 0.1em;
 }
 
 /* To clear werid padding issues in fireofox. */
@@ -51,7 +84,7 @@ nav ul
 nav li
 {
 	font-family: "Oswald", sans-serif;
-	letter-spacing: 0.2em;
+	letter-spacing: 0.1em;
 
 	display: inline-block;
 	margin: 0 .5em;

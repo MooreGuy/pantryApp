@@ -34,11 +34,11 @@
 				<div id="contentOptions"  >			
 				
 					<ul>
-						<li id="add"><button>|+| Add</button></li>
-						<li>|%| Edit</li>
-						<li id="delete">|-| Delete</li>
-						<li>Something</li>
-						<li>Something</li>
+						<li id="add" class="button" >|+| Add</li>
+						<li id="edit" class="button" >|%| Edit</li>
+						<li id="delete" class="button" >|-| Delete</li>
+						<li id="Something" class="button" >Something</li>
+						<li id="Something" class="button" >Something</li>
 					</ul>
 				
 				</div> <!-- contentOptions -->
@@ -57,11 +57,11 @@
 					<nav>
 
 						<ul>
-							<li><button>My Pantries</button></li>
+							<li class="button" >My Pantries</li>
 							<li>|</li>
-							<li><button><a href="foods.php" >My Foods</a></button></li>
+							<li class="button" ><a href="foods.php" >My Foods</a></li>
 							<li>|</li>
-							<li><button><a href="logout.php" >Log out</a></button></li>
+							<li class="button" ><a href="logout.php" >Log out</a></li>
 						</ul>
 
 					</nav>

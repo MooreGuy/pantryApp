@@ -19,6 +19,13 @@ var createRow = function ( elements )
 	return newRow;
 }
 
+var addFood = function()
+{
+	var formRow = "<tr><td><input name="button"></td><td class="nameColumn"><input name="name" place-holder="Name"></td><td class="typeColumn ><input name="type place-holder="Type"></td><td class="quantityColumn" ><input name="quantity" ></td><td class="expirationDate" ><input name="expirationDate"></td></tr>";
+
+	$(".currentPantry tr:last").after(formRow); 
+};
+
 var deleteItem = function ()
 {
 	$(".currentPantry tr:last").remove();
@@ -26,7 +33,7 @@ var deleteItem = function ()
 
 var addItem = function ()
 {
-	$(".currentPantry tr:last").after( createRow(testArray) );
+	$(".currentPantry tr:last").after( addFood() );
 	$(".currentPantry tr:last").hide().fadeIn("slow");
 };
 
