@@ -64,7 +64,7 @@ if(isset($_POST['pass']))
 	$i = 0;
 	$dPassword = $result->fetchAll(PDO::FETCH_ASSOC);
 
-	if(password_verify($password, $dPassword[0]['password']))
+	if( $dPassword != null && password_verify($password, $dPassword[0]['password']))
 	{	
 		$loginError = null;
 	}
