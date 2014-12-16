@@ -1,3 +1,12 @@
+<?php
+
+if( !isset($_SESSION) )
+{
+	session_start();
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -89,25 +98,79 @@
 						
 						<tbody>
 
-						<!-- Populate the table with foods -->
-
+						<!-- Populate the table with whatever the chosen content is, if nothing is chose, display pantries. -->
 						<?php
 
-						 include 'Database.php';	
-						 $pdo = Database::connect();
-						 $sql = 'SELECT * FROM foods ORDER BY id DESC';
-						 foreach ($pdo->query($sql) as $row)
-						 {
-							echo '<tr>';
-							echo '<td><div class="checkbox"></div></td>';
-							echo '<td>' . $row['name'] . '</td>';
-							echo '<td>' . $row['type'] . '</td>';
-							echo '<td>' . $row['quantity'] . '</td>';
-							echo '<td>' . $row['expiration_date'] . '</td>';
-							echo '</tr>';
+						/* Connect to the database to populate the main table. */
+						include 'Database.php';	
+						$pdo = Database::connect();
+
+						
+						/* Get user email */
+						$emailQuerry = 'SELECT useremail, id 
+							FROM sessions
+							WHERE id = ?';
+
+						$querry = $pdo->prepare( $emailQuerry );
+						$querry->execute( array( session_id() ) );
+
+						$sqlReturn = $querry->fetchAll(PDO::FETCH_ASSOC);
+						$email = $sqlReturn[0]['useremail'];
+						
+						Database::disconnect();
+
+						/* Check what the user wants to view, all pantries if nothing selected.*/
+						if( isset( $_GET['pantry'] ) )
+						{
+
+							$sql = 'SELECT * FROM foods ORDER BY id DESC';
+							foreach ($pdo->query($sql) as $row)
+							{
+								echo '<tr>';
+								echo '<td><div class="checkbox"></div></td>';
+								echo '<td>' . $row['name'] . '</td>';
+								echo '<td>' . $row['type'] . '</td>';
+								echo '<td>' . $row['quantity'] . '</td>';
+								echo '<td>' . $row['expiration_date'] . '</td>';
+								echo '</tr>';
+							}
+
+						}
+						/* Check if the user is wanting to view foods instead. */
+						elseif( !empty( $_GET['foods'] ) )
+						{
+
+							foreach ($pdo->query($sql) as $row)
+							{
+								echo '<tr>';
+								echo '<td><div class="checkbox"></div></td>';
+								echo '<td>' . $row['name'] . '</td>';
+								echo '<td>' . $row['type'] . '</td>';
+								echo '<td>' . $row['quantity'] . '</td>';
+								echo '<td>' . $row['expiration_date'] . '</td>';
+								echo '</tr>';
+							}
+						}
+						/* The user is undecided, default to show pantries. *
+						else
+						{
+
+							$sql = 'SELECT * FROM foods ORDER BY id DESC';
+							foreach ($pdo->query($sql) as $row)
+							{
+								echo '<tr>';
+								echo '<td><div class="checkbox"></div></td>';
+								echo '<td>' . $row['name'] . '</td>';
+								echo '<td>' . $row['type'] . '</td>';
+								echo '<td>' . $row['quantity'] . '</td>';
+								echo '<td>' . $row['expiration_date'] . '</td>';
+								echo '</tr>';
+							}
 						}
 
+						/* Close the database. */
 						Database::disconnect();
+
 						?>
 
 						</tbody>	
