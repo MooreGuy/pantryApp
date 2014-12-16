@@ -79,9 +79,11 @@ if(isset($_POST['pass']))
 		$myId = session_id();
 
 		//Store the session
-		$sql = 'INSERT INTO sessions ( id, time) values( ?, ?)';
+		$sql = 'INSERT INTO sessions ( id, time, useremail) values( ?, ?, ? )';
+	
+		$time = date('m/d/Y h:i:s', time());
 		$query = $pdo->prepare($sql);
-		$query->execute(array( $myId, date().time()));
+		$query->execute(array( $myId, $time, $email));
 
 		header("Location: http://guymoore.me/php/pantry.php");
 	}

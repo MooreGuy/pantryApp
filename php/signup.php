@@ -79,11 +79,11 @@ if(isset($_POST['firstname']))
 		$myId = session_id();
 
 		//Now add the session to the session table
-		$sql = 'INSERT INTO sessions ( id, time) values( ?, ?)';
+		$sql = 'INSERT INTO sessions ( id, time, useremail) values( ?, ?, ?)';
 		$query = $pdo->prepare($sql);
 
-		$date = date('m/d/Y h:i:s', time());
-		$query->execute(array( $myId, $date));
+		$time = date('m/d/Y h:i:s', time());
+		$query->execute(array( $myId, $time, $email));
 
 		Database::disconnect();
 
