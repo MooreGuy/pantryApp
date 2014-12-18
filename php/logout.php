@@ -1,7 +1,13 @@
 <?PHP
 	session_start();
 	
-	session_destroy();
+	$removeSession = 'DELETE FROM sessions WHERE id = ?';
 	
-	header("http://guymoore.me/index.php");
+	include 'Database.php';
+	$pdo = Database::connect();
+	$remove = $pdo->prepare( $removeSession );
+	$remove->execute( array( session_id() ) );
+	
+	echo session_id();
+	header("Location: http://guymoore.me");
 ?>

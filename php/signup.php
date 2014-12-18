@@ -87,7 +87,7 @@ if(isset($_POST['firstname']))
 
 		Database::disconnect();
 
-		/*header("Location: http://guymoore.me/php/pantry.php");*/
+		header("Location: http://guymoore.me/php/pantry.php");
 	}
 
 }

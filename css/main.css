@@ -60,6 +60,7 @@ header
 {
 	border: solid .075em #AAA;
 	text-align: center;	
+	padding: 1rem;
 	
 
 	
@@ -146,6 +147,11 @@ footer
 	float: left;
 	display: inline;
 	padding: 0 0 0 7em;
+}
+
+a
+{
+	color: black;
 }
 
 /************************ 
