@@ -20,7 +20,6 @@ html
 a
 {
 	text-decoration: none;
-	color: white;
 }
 
 h3
@@ -39,11 +38,14 @@ h3
 .button
 {
 	background-color:#337ab7;
-	color: #FFF;
-
 	border-radius: 5px;
 	padding: .25rem;
 	margin: .25rem 0;
+}
+
+.button, .button a
+{
+	color: white;
 }
 
 li
@@ -151,7 +153,7 @@ footer
 
 a
 {
-	color: white;
+	color: #000;
 }
 
 /************************ 
