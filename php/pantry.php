@@ -200,9 +200,9 @@ if( !empty($_POST) )
 				<div id="contentOptions"  >			
 				
 					<ul>
-						<li id="add" class="button" >|+| Add</li>
-						<li id="edit" class="button" >|%| Edit</li>
-						<li id="delete" class="button" >|-| Delete</li>
+						<li id="addButton" class="button" >|+| Add</li>
+						<li id="editButton" class="button" >|%| Edit</li>
+						<li id="deleteButton" class="button" >|-| Delete</li>
 						<li id="Something" class="button" >Something</li>
 						<li id="Something" class="button" >Something</li>
 					</ul>
