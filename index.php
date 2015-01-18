@@ -60,7 +60,7 @@
 				<footer>
 					
 					<p>
-						The Pantry App is open source
+						The Pantry App smells like my dog. And my dog smells gross.
 					</p>	
 
 				</footer>
